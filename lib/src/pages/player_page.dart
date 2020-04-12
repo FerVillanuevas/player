@@ -25,6 +25,8 @@ class PlayerPage extends StatelessWidget {
 
                   _Actions(),
 
+                  _UpNext()
+
                 ],
 
               ),
@@ -32,6 +34,50 @@ class PlayerPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _UpNext extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(15.0),
+      margin: EdgeInsets.only(right: 10.0, left: 10.0, top:20.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(5.0))
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(3.0),
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(image: AssetImage('assets/art.jpg'), fit: BoxFit.cover)
+                  ),
+                  child: IconButton(
+                    icon: Icon(
+                      FontAwesomeIcons.play,
+                      color: Colors.white,
+                      size: 15.0,
+                    ),
+                    onPressed: (){},
+                  ),
+                ),
+              )
+            ],
+
+          ),
+          Text('Up next', style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold, fontSize: 14.0),)
+        ],
+      )
     );
   }
 }
@@ -50,8 +96,8 @@ class _Actions extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(100),
             child: Container(
-              height: 100,
-              width: 100,
+              height: 70,
+              width: 70,
               color: Colors.redAccent,
               child: IconButton(
                 icon: Icon(FontAwesomeIcons.play, color: Colors.white,),
